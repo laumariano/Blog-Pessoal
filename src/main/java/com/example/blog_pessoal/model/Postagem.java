@@ -21,6 +21,19 @@ public class Postagem {
     @Column(nullable = false)
     private LocalDate data = LocalDate.now();
 
+    @ManyToOne
+    @JoinColumn(name = "tema_id")
+
+    private Tema tema;
+    public Tema getTema() {
+        return tema;
+    }
+
+    public void setTema(Tema tema) {
+        this.tema = tema;
+    }
+
+
     // Getters
     public Long getId() {
         return id;
@@ -54,4 +67,5 @@ public class Postagem {
     public void setData(LocalDate data) {
         this.data = data;
     }
+
 }
